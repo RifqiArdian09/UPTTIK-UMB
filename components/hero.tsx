@@ -23,6 +23,7 @@ const Hero = () => {
           fill
           className="object-cover object-top md:object-center"
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute bottom-0 left-0 right-0 h-12 md:h-16 bg-gradient-to-t from-background to-transparent" />
@@ -31,9 +32,9 @@ const Hero = () => {
       <div className="relative z-10 md:mt-6 flex items-center justify-center">
         <div className="text-center max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <Badge variant="outline" className="rounded-full px-4 py-1.5 border-white/20 bg-white/10 text-white backdrop-blur-sm">
               {t("hero.badge1")} • {t("hero.badge2")} • {t("hero.badge3")}
@@ -41,19 +42,19 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{ y: -10, opacity: 1 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.3 }}
             className="mt-8 text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-white drop-shadow-lg font-heading"
           >
             {t("hero.title1")} <br />
-            <span className="italic">{t("hero.title2")}</span>
+           {t("hero.title2")}
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ y: -10, opacity: 1 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.3 }}
             className="mt-8 max-w-[65ch] mx-auto text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-md"
           >
             {t("hero.description")}

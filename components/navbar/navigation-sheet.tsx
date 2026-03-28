@@ -125,7 +125,7 @@ export const NavigationSheet = () => {
                               )} />
                             </div>
                             <span className={cn(
-                              "font-heading font-black uppercase italic tracking-wider text-[13px] transition-colors",
+                              "font-heading font-black uppercase tracking-wider text-[13px] transition-colors",
                               isActive ? "text-primary font-bold" : "text-foreground/80 group-hover:text-foreground"
                             )}>
                               {item.name}

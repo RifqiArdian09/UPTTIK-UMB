@@ -34,6 +34,7 @@ const ProfilePage = () => {
                             fill
                             className="object-cover"
                             priority
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
                         />
                         <div className="absolute inset-0 bg-black/50" />
                         <div className="absolute bottom-0 left-0 right-0 h-12 md:h-16 bg-gradient-to-t from-background to-transparent" />
@@ -42,16 +43,16 @@ const ProfilePage = () => {
                     <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
                         <motion.div
                             key={`hero-${language}`}
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
+                            initial={{ y: -10, opacity: 1 }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <Badge variant="outline" className="rounded-full px-4 py-1.5 md:px-6 md:py-2 border-white/20 bg-white/10 text-white mb-4 md:mb-6 backdrop-blur-sm gap-2 text-[10px] md:text-xs">
                                 <Building2 className="h-3 w-3 md:h-4 md:w-4" />
                                 {t("profile.hero.badge")}
                             </Badge>
                             <h1 className="text-3xl md:text-6xl font-black tracking-tight mb-3 md:mb-8 text-white drop-shadow-md leading-tight">
-                                {t("profile.hero.title1")} <span className="text-white italic">{t("profile.hero.title2")}</span>
+                                {t("profile.hero.title1")} <span className="text-white">{t("profile.hero.title2")}</span>
                             </h1>
                             <p className="max-w-2xl mx-auto text-sm md:text-xl text-white/90 leading-relaxed font-medium drop-shadow-sm">
                                 {t("profile.hero.description")}
@@ -80,7 +81,7 @@ const ProfilePage = () => {
                                 </div>
 
                                 <div className="text-center lg:text-left">
-                                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground font-heading uppercase italic">{t("profile.about.title")}</h2>
+                                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground font-heading uppercase">{t("profile.about.title")}</h2>
                                 </div>
 
                                 {/* Mobile Image */}
@@ -233,7 +234,7 @@ const ProfilePage = () => {
                                         },
                                     },
                                 }}
-                                className="text-3xl md:text-4xl font-medium text-foreground italic leading-snug"
+                                className="text-3xl md:text-4xl font-medium text-foreground leading-snug"
                             >
                                 &quot;{t("profile.vision.content").split("").map((char: string, index: number) => (
                                     <motion.span

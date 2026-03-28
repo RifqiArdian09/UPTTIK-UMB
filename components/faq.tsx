@@ -70,9 +70,9 @@ const FAQ = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 font-heading uppercase italic"
+                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 font-heading uppercase"
                     >
-                        {t("faq.title")} <span className="text-primary">{t("faq.title_italic")}</span>
+                        {t("faq.title")} {t("faq.title_italic")}
                     </motion.h2>
 
                     <motion.p
@@ -135,7 +135,7 @@ const FAQ = () => {
 
                                         <div className="flex-1 pr-8">
                                             <h3 className={cn(
-                                                "text-lg md:text-xl font-black uppercase italic tracking-tight transition-colors duration-300 font-heading",
+                                                "text-lg md:text-xl font-black uppercase tracking-tight transition-colors duration-300 font-heading",
                                                 isOpen ? "text-primary" : "text-foreground group-hover:text-primary"
                                             )}>
                                                 {item.question}

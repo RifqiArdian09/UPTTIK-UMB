@@ -3,14 +3,15 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { GeistSans } from "geist/font/sans";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Anonymous_Pro } from "next/font/google";
 import { LanguageProvider } from "@/context/language-context";
 import "./globals.css";
 
 const geist = GeistSans;
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const anonymousPro = Anonymous_Pro({
   subsets: ["latin"],
+  weight: ["400", "700"],
   variable: "--font-sans",
 });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${geist.variable} ${plusJakartaSans.variable} ${plusJakartaSans.className} antialiased bg-background text-foreground grid-bg`} suppressHydrationWarning={true}>
+      <body className={`${geist.variable} ${anonymousPro.variable} ${anonymousPro.className} antialiased bg-background text-foreground grid-bg`} suppressHydrationWarning={true}>
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <TooltipProvider>

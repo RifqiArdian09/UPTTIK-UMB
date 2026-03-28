@@ -22,7 +22,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 font-heading">
-            {t("testimonials.title")} <span className="text-primary italic">{t("testimonials.title_italic")}</span>
+            {t("testimonials.title")} {t("testimonials.title_italic")}
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
             {t("testimonials.description")}
@@ -43,7 +43,7 @@ const Testimonials = () => {
         <Marquee pauseOnHover reverse className="[--duration:45s] py-4">
           {translatedTestimonials.map((t, idx) => (
             <TestimonialCard key={idx} {...t} />
-          ))}
+          ))} 
         </Marquee>
       </div>
     </section>
@@ -87,7 +87,7 @@ const TestimonialCard = ({ name, designation, testimonial }: TestimonialProps) =
           </div>
         </div>
 
-        <p className="text-muted-foreground text-lg leading-relaxed relative z-10 mb-8 italic">
+        <p className="text-muted-foreground text-lg leading-relaxed relative z-10 mb-8">
           &quot;{testimonial}&quot;
         </p>
 

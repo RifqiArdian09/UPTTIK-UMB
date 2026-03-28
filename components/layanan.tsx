@@ -163,7 +163,7 @@ const Layanan = () => {
                       </div>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 font-heading uppercase italic tracking-wide">
+                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 font-heading uppercase tracking-wide">
                     {item.title}
                   </h3>
                   <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-semibold">
@@ -224,7 +224,7 @@ const Layanan = () => {
                       </div>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 font-heading uppercase italic tracking-wide">
+                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 font-heading uppercase tracking-wide">
                     {item.title}
                   </h3>
                   <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-semibold">
