@@ -4,7 +4,7 @@
 - **Framework**: Next.js 
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui (Radix UI)
+- **UI Components**: shadcn
 - **Icons**: lucide-react
 
 ## Lisensi
