@@ -77,8 +77,8 @@ const Tentangkami = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-10"
             >
-              <Button asChild size="xl" className="rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-lg rounded-br-lg group shadow-lg shadow-primary/20 px-8 sm:px-10 transition-all duration-300 hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98] font-semibold text-base">
-                <Link href="/profil" className="flex items-center">
+              <Button asChild size="xl" className="w-full sm:w-auto rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-lg rounded-br-lg group shadow-lg shadow-primary/20 px-8 sm:px-10 transition-[transform,border-radius,box-shadow,color,background-color,border-color] duration-300 hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98] font-semibold text-base">
+                <Link href="/profil" className="flex items-center justify-center w-full">
                   {t("about.readMore")}
                   <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>

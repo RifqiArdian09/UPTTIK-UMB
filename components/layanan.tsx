@@ -117,7 +117,7 @@ const Layanan = () => {
                 key={idx}
                 variants={itemVariants}
                 className={cn(
-                  "group relative aspect-[4/5] sm:aspect-[3/4] w-full overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
+                  "group relative aspect-[4/5] sm:aspect-[3/4] w-full overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-[border-color,box-shadow] duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
                   isEven
                     ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
                     : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"
@@ -181,7 +181,7 @@ const Layanan = () => {
                 key={idx + 3}
                 variants={itemVariants}
                 className={cn(
-                  "group relative aspect-[4/3] sm:aspect-video xl:aspect-video w-full overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
+                  "group relative aspect-[4/3] sm:aspect-video xl:aspect-video w-full overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-[border-color,box-shadow] duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
                   isEven
                     ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
                     : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"

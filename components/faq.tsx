@@ -83,10 +83,7 @@ const FAQ = () => {
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className={cn(
-                                    "group relative overflow-hidden transition-all duration-300",
-                                    isOpen ? "md:col-span-2" : "md:col-span-1"
-                                )}
+                                className="group relative overflow-hidden h-full"
                             >
                                 <div
                                     onClick={() => toggleFAQ(index)}
@@ -123,22 +120,18 @@ const FAQ = () => {
                                             </div>
                                         </div>
 
-                                        <AnimatePresence initial={false}>
-                                            {isOpen && (
-                                                <motion.div
-                                                    initial={{ height: 0, opacity: 0, y: -10 }}
-                                                    animate={{ height: "auto", opacity: 1, y: 0 }}
-                                                    exit={{ height: 0, opacity: 0, y: -10 }}
-                                                    transition={{ duration: 0.35, ease: "easeOut" }}
-                                                >
-                                                    <div className="mt-6 pt-6 border-t border-primary/10">
-                                                        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
-                                                             {item.answer}
-                                                        </p>
-                                                    </div>
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
+                                        <div className={cn(
+                                            "grid transition-all duration-300 ease-in-out",
+                                            isOpen ? "grid-rows-[1fr] opacity-100 mt-6" : "grid-rows-[0fr] opacity-0 mt-0"
+                                        )}>
+                                            <div className="overflow-hidden">
+                                                <div className="pt-6 border-t border-primary/10">
+                                                    <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
+                                                         {item.answer}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         {/* Simple Indicator */}
                                         <div className={cn(
