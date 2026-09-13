@@ -33,30 +33,21 @@ const Hero = () => {
 
       <div className="relative z-10 md:mt-4 flex items-center justify-center w-full max-w-5xl">
         <div className="text-center w-full">
-          <motion.h1
-            initial={{ y: -10, opacity: 1 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-lg font-heading"
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-lg font-heading animate-in fade-in slide-in-from-top-4 duration-700 fill-mode-both"
           >
             {t("hero.title1")} <br />
             <span className="text-white/95">{t("hero.title2")}</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ y: -10, opacity: 1 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-6 md:mt-8 max-w-[65ch] mx-auto text-base sm:text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-sm font-medium"
+          <p
+            className="mt-6 md:mt-8 max-w-[65ch] mx-auto text-base sm:text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-sm font-medium animate-in fade-in slide-in-from-top-4 duration-700 delay-150 fill-mode-both"
           >
             {t("hero.description")}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center sm:justify-center gap-4"
+          <div
+            className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center sm:justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both"
           >
             <Button
               size="xl"
@@ -78,7 +69,7 @@ const Hero = () => {
                 <Phone className="h-5 w-5 transition-transform group-hover:scale-110" />
               </Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

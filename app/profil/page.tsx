@@ -26,7 +26,7 @@ const ProfilePage = () => {
             <Navbar />
             <main id="tentang" className="pt-16 pb-20">
                 {/* Hero Section */}
-                <section className="relative w-full h-[380px] md:h-[500px] lg:h-[580px] flex items-center justify-center overflow-hidden">
+                <section className="relative w-full h-[320px] md:h-[400px] lg:h-[460px] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <Image
                             src="/visi.webp"

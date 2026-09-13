@@ -128,7 +128,7 @@ const Layanan = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    quality={80}
+                    quality={60}
                     className={cn(
                       "object-cover transition-transform duration-700 ease-out group-hover:scale-105",
                       idx === 2 ? "object-top" : "object-center"
@@ -192,7 +192,7 @@ const Layanan = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    quality={80}
+                    quality={60}
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 object-center"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 550px"
                   />

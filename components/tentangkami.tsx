@@ -31,7 +31,7 @@ const Tentangkami = () => {
                 alt="Tentang Kami UPTTIK"
                 width={700}
                 height={500}
-                quality={80}
+                quality={60}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 550px"
                 className="w-full h-auto max-h-[360px] lg:max-h-[400px] object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105"
               />
