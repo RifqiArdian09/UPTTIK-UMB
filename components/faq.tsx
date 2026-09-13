@@ -44,26 +44,24 @@ const FAQ = () => {
 
     return (
         <section id="faq" className="relative py-24 md:py-32 overflow-hidden bg-background">
-
-
             <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-                <div className="flex flex-col items-center mb-20 text-center">
-
+                <div className="flex flex-col items-center mb-16 md:mb-20 text-center">
                     <motion.h2
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-6 font-heading uppercase"
+                        transition={{ duration: 0.5 }}
+                        className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 font-heading uppercase"
                     >
-                        {t("faq.title")} {t("faq.title_italic")}
+                        {t("faq.title")} <span className="text-primary">{t("faq.title_italic")}</span>
                     </motion.h2>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: -10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="max-w-2xl text-lg text-muted-foreground leading-relaxed"
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed font-normal"
                     >
                         {t("faq.description")}
                     </motion.p>
@@ -79,7 +77,6 @@ const FAQ = () => {
                     {questions.map((item, index) => {
                         const Icon = icons[index % icons.length];
                         const isOpen = openIndex === index;
-                        const isFirst = index === 0;
                         const isOdd = index % 2 !== 0;
 
                         return (
@@ -87,30 +84,29 @@ const FAQ = () => {
                                 key={index}
                                 variants={itemVariants}
                                 className={cn(
-                                    "group relative overflow-hidden transition-all duration-500",
+                                    "group relative overflow-hidden transition-all duration-300",
                                     isOpen ? "md:col-span-2" : "md:col-span-1"
                                 )}
                             >
                                 <div
                                     onClick={() => toggleFAQ(index)}
                                     className={cn(
-                                        "cursor-pointer h-full relative border-2 transition-all duration-500 bg-card/40 backdrop-blur-md overflow-hidden",
+                                        "cursor-pointer h-full relative border transition-all duration-300 bg-card/60 backdrop-blur-sm overflow-hidden",
                                         isOpen
-                                            ? "border-primary shadow-[0_0_40px_-10px_rgba(var(--primary),0.3)] ring-1 ring-primary/20"
-                                            : "border-primary/5 hover:border-primary/30",
+                                            ? "border-primary/40 bg-card shadow-xl ring-1 ring-primary/20"
+                                            : "border-primary/10 hover:border-primary/30 hover:shadow-md",
                                         isOdd
                                             ? "rounded-tl-[2rem] rounded-br-[2rem] rounded-tr-md rounded-bl-md"
                                             : "rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-md rounded-br-md"
                                     )}
                                 >
-
                                     <div className="p-6 md:p-8 relative z-10 flex flex-col">
                                         <div className="flex items-start gap-4 md:gap-6">
                                             {/* Icon Box */}
                                             <div className={cn(
-                                                "flex-shrink-0 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-all duration-500 border-2",
+                                                "flex-shrink-0 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-all duration-300 border-2",
                                                 isOpen
-                                                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20 scale-110"
+                                                    ? "bg-primary text-primary-foreground border-primary shadow-md scale-105"
                                                     : "bg-primary/5 text-primary border-primary/10 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary",
                                                 isOdd ? "rounded-tl-2xl rounded-br-2xl" : "rounded-tr-2xl rounded-bl-2xl"
                                             )}>
@@ -119,7 +115,7 @@ const FAQ = () => {
 
                                             <div className="flex-1 pr-10 md:pr-12">
                                                 <h3 className={cn(
-                                                    "text-lg md:text-xl font-black uppercase tracking-tight transition-colors duration-300 font-heading",
+                                                    "text-base sm:text-lg md:text-xl font-extrabold uppercase tracking-tight transition-colors duration-200 font-heading leading-snug",
                                                     isOpen ? "text-primary" : "text-foreground group-hover:text-primary"
                                                 )}>
                                                     {item.question}
@@ -133,11 +129,11 @@ const FAQ = () => {
                                                     initial={{ height: 0, opacity: 0, y: -10 }}
                                                     animate={{ height: "auto", opacity: 1, y: 0 }}
                                                     exit={{ height: 0, opacity: 0, y: -10 }}
-                                                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                                    transition={{ duration: 0.35, ease: "easeOut" }}
                                                 >
                                                     <div className="mt-6 pt-6 border-t border-primary/10">
-                                                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-medium">
-                                                            {item.answer}
+                                                        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed font-normal">
+                                                             {item.answer}
                                                         </p>
                                                     </div>
                                                 </motion.div>
@@ -146,10 +142,10 @@ const FAQ = () => {
 
                                         {/* Simple Indicator */}
                                         <div className={cn(
-                                            "absolute top-6 right-6 md:top-8 md:right-8 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-500",
-                                            isOpen ? "bg-primary border-primary text-primary-foreground rotate-180" : "border-primary/20 text-primary rotate-0"
+                                            "absolute top-6 right-6 md:top-8 md:right-8 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300",
+                                            isOpen ? "bg-primary border-primary text-primary-foreground rotate-180" : "border-primary/20 text-primary rotate-0 group-hover:border-primary"
                                         )}>
-                                            {isOpen ? <Minus size={16} strokeWidth={3} /> : <Plus size={16} strokeWidth={3} />}
+                                            {isOpen ? <Minus size={16} strokeWidth={2.5} /> : <Plus size={16} strokeWidth={2.5} />}
                                         </div>
                                     </div>
                                 </div>

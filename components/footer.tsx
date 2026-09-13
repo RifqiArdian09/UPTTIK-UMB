@@ -41,33 +41,34 @@ const Footer = () => {
 
   return (
     <footer id="footer" className="w-full bg-background text-muted-foreground pt-16 pb-8 border-t border-border relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
 
         {/* WhatsApp Urgent Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-card border-2 border-primary/10 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl p-8 lg:p-12 mb-16 flex flex-col lg:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-xl"
+          transition={{ duration: 0.5 }}
+          className="bg-card border border-primary/10 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl p-8 lg:p-12 mb-16 flex flex-col lg:flex-row items-center justify-between gap-10 relative overflow-hidden shadow-xl"
         >
           {/* Internal Tech Pattern */}
           <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none bg-[linear-gradient(var(--primary)_1px,transparent_1px),linear-gradient(90deg,var(--primary)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-10 z-10 relative w-full lg:w-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 z-10 relative w-full lg:w-auto">
             {/* WhatsApp Icon with Pulse Effect */}
-            <div className="relative">
+            <div className="relative flex-shrink-0">
               <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20"></div>
               <motion.div
                 animate={{
                   scale: [1, 1.05, 1],
                   boxShadow: [
                     "0 0 20px 2px rgba(37,211,102,0.15)",
-                    "0 0 40px 10px rgba(37,211,102,0.4)",
+                    "0 0 35px 8px rgba(37,211,102,0.35)",
                     "0 0 20px 2px rgba(37,211,102,0.15)"
                   ]
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 2.5,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -81,8 +82,8 @@ const Footer = () => {
 
             {/* Text Content */}
             <div className="text-center lg:text-left">
-              <h2 className="text-xl lg:text-3xl font-bold tracking-tight mb-2 text-card-foreground font-heading">{t("footer.help_title")}</h2>
-              <p className="text-muted-foreground text-base lg:text-lg font-medium max-w-md">
+              <h2 className="text-xl lg:text-3xl font-extrabold tracking-tight mb-2 text-card-foreground font-heading">{t("footer.help_title")}</h2>
+              <p className="text-muted-foreground text-sm sm:text-base lg:text-lg font-normal max-w-md leading-relaxed">
                 {t("footer.help_description")}
               </p>
             </div>
@@ -93,7 +94,7 @@ const Footer = () => {
             <Link
               href="https://wa.me/6285199416317"
               target="_blank"
-              className="inline-flex items-center justify-center w-full lg:w-auto px-4 py-3.5 lg:px-10 lg:py-4 border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white dark:hover:bg-[#25D366] dark:hover:border-[#25D366] dark:hover:text-black font-bold rounded-tr-[1.5rem] rounded-bl-[1.5rem] rounded-tl-md rounded-br-md transition-all duration-500 group whitespace-nowrap hover:rounded-2xl"
+              className="inline-flex items-center justify-center w-full lg:w-auto px-6 py-3.5 lg:px-10 lg:py-4 border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white dark:hover:bg-[#25D366] dark:hover:border-[#25D366] dark:hover:text-black font-bold rounded-tr-[1.5rem] rounded-bl-[1.5rem] rounded-tl-md rounded-br-md transition-all duration-300 group whitespace-nowrap hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98]"
             >
               <span className="mr-2 text-sm sm:text-base">{t("footer.whatsapp_btn")}</span>
               <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -117,7 +118,7 @@ const Footer = () => {
                 </span>
               </div>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed font-heading">
+            <p className="text-muted-foreground text-sm leading-relaxed font-normal">
               {t("footer.description")}
             </p>
           </div>
@@ -125,11 +126,11 @@ const Footer = () => {
           {footerLinks.map((section) => (
             <div key={section.title} className="col-span-1">
               <h4 className="text-foreground font-semibold mb-6 uppercase tracking-widest text-xs font-heading">{section.title}</h4>
-              <ul className="space-y-3 text-muted-foreground text-sm font-heading">
+              <ul className="space-y-3 text-muted-foreground text-sm">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     {link.href ? (
-                      <Link href={link.href} className="hover:text-primary transition-colors">
+                      <Link href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined} className="hover:text-primary transition-colors">
                         {link.name}
                       </Link>
                     ) : (
@@ -145,10 +146,10 @@ const Footer = () => {
 
           <div className="col-span-2 lg:col-span-1">
             <h4 className="text-foreground font-semibold mb-6 uppercase tracking-widest text-xs font-heading">{t("footer.sections.contact")}</h4>
-            <div className="space-y-4 text-sm text-muted-foreground font-heading">
+            <div className="space-y-4 text-sm text-muted-foreground">
               <div className="flex gap-4">
                 <MapPin className="text-primary w-5 h-5 flex-shrink-0" />
-                <span>Jl. Bali, Komplek Universitas Muhammadiyah Gedung D, Kampung Bali, Bengkulu</span>
+                <span className="leading-relaxed">Jl. Bali, Komplek Universitas Muhammadiyah Gedung D, Kampung Bali, Bengkulu</span>
               </div>
               <div className="flex gap-4">
                 <Mail className="text-primary w-5 h-5 flex-shrink-0" />
@@ -162,7 +163,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <Separator className="bg-slate-200 dark:bg-white/5 mb-8" />
+        <Separator className="bg-border mb-8" />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-[10px] sm:text-xs text-muted-foreground uppercase tracking-[0.2em] font-bold text-center">

@@ -6,8 +6,6 @@ import {
   Server,
   Globe,
   Headset,
-  Cpu,
-  Sparkles,
 } from "lucide-react";
 import { motion, Variants } from "motion/react";
 import Image from "next/image";
@@ -26,14 +24,13 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: -30 },
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15
+      duration: 0.5,
+      ease: "easeOut"
     }
   },
 };
@@ -53,9 +50,9 @@ const Layanan = () => {
   return (
     <section
       id="layanan"
-      className="relative flex flex-col items-center justify-center py-24 xs:py-32 px-6 md:px-12 lg:px-16 overflow-hidden bg-muted/50"
+      className="relative flex flex-col items-center justify-center py-24 md:py-32 px-6 md:px-12 lg:px-16 overflow-hidden bg-muted/40"
     >
-      {/* Technical Frame Decorations - Visible on all devices */}
+      {/* Technical Frame Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Top Divider */}
         <div className="absolute top-0 left-0 w-full h-8 md:h-12">
@@ -67,9 +64,8 @@ const Layanan = () => {
           </svg>
         </div>
 
-        {/* Side Accents - Only on larger screens to avoid clutter on mobile */}
+        {/* Side Accents */}
         <div className="hidden sm:block absolute top-8 md:top-12 bottom-8 md:bottom-12 left-0 w-[50px] border-l border-primary/10 h-full" />
-        <div className="absolute top-8 md:top-12 bottom-8 md:bottom-12 right-0 w-[50px] border-r border-primary/10 h-full sm:hidden" /> {/* Small right border for mobile if needed, but usually looks cleaner without on very small screens */}
         <div className="hidden sm:block absolute top-8 md:top-12 bottom-8 md:bottom-12 right-0 w-[50px] border-r border-primary/10 h-full" />
 
         {/* Bottom Divider */}
@@ -82,25 +78,24 @@ const Layanan = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-20">
+        <div className="flex flex-col items-center mb-16 md:mb-20 text-center">
           <motion.h2
             key={`title-${language}`}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-black text-center tracking-tight font-heading flex items-center gap-3"
+            transition={{ duration: 0.5 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading"
           >
-            <Sparkles className="h-8 w-8 text-primary hidden md:block" />
             {t("layanan.title")}
-            <Sparkles className="h-8 w-8 text-primary hidden md:block" />
           </motion.h2>
           <motion.p
             key={`desc-${language}`}
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mt-6 text-center max-w-2xl text-muted-foreground text-lg md:text-xl"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-6 max-w-2xl text-muted-foreground text-base sm:text-lg md:text-xl font-normal leading-relaxed"
           >
             {t("layanan.description")}
           </motion.p>
@@ -112,8 +107,8 @@ const Layanan = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
         >
           {translatedLayanan.slice(0, 3).map((item, idx) => {
             const isEven = idx % 2 === 0;
@@ -122,7 +117,7 @@ const Layanan = () => {
                 key={idx}
                 variants={itemVariants}
                 className={cn(
-                  "group relative aspect-[4/5] sm:aspect-video lg:aspect-square xl:aspect-[3/4] overflow-hidden bg-card border border-primary/5 cursor-pointer shadow-lg",
+                  "group relative aspect-[4/5] sm:aspect-video lg:aspect-square xl:aspect-[3/4] overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
                   isEven
                     ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
                     : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"
@@ -133,30 +128,30 @@ const Layanan = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary/20 font-bold text-4xl">UMB</span>
+                    <span className="text-primary/20 font-bold text-4xl font-heading">UMB</span>
                   </div>
                 )}
 
                 {/* Text Content Overlay */}
-                <div className="absolute inset-0 p-5 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent z-20">
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/50 to-transparent z-20">
                   {item.icon && (
                     <div className="mb-4">
                       <div className={cn(
-                        "w-12 h-12 flex items-center justify-center bg-background border-2 border-primary/30 shadow-xl",
+                        "w-12 h-12 flex items-center justify-center bg-background/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl transition-transform duration-300 group-hover:scale-110",
                         isEven ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"
                       )}>
                         <item.icon className="w-6 h-6 text-primary" />
                       </div>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 font-heading uppercase tracking-wide">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-2 font-heading uppercase tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-semibold">
+                  <p className="text-xs md:text-sm text-zinc-200/90 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -171,19 +166,17 @@ const Layanan = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
           {translatedLayanan.slice(3).map((item, idx) => {
-            // idx for slice(3) starts at 0, which is index 3 in original array
-            // We want it to alternate correctly with the previous row
             const isEven = (idx + 1) % 2 === 0;
             return (
               <motion.div
                 key={idx + 3}
                 variants={itemVariants}
                 className={cn(
-                  "group relative aspect-[4/5] sm:aspect-video xl:aspect-video overflow-hidden bg-card border border-primary/5 cursor-pointer shadow-lg",
+                  "group relative aspect-[4/5] sm:aspect-video xl:aspect-video overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
                   isEven
                     ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
                     : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"
@@ -194,30 +187,30 @@ const Layanan = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary/20 font-bold text-4xl">UMB</span>
+                    <span className="text-primary/20 font-bold text-4xl font-heading">UMB</span>
                   </div>
                 )}
 
                 {/* Text Content Overlay */}
-                <div className="absolute inset-0 p-5 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent z-20">
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/50 to-transparent z-20">
                   {item.icon && (
                     <div className="mb-4">
                       <div className={cn(
-                        "w-12 h-12 flex items-center justify-center bg-background border-2 border-primary/30 shadow-xl",
+                        "w-12 h-12 flex items-center justify-center bg-background/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl transition-transform duration-300 group-hover:scale-110",
                         isEven ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"
                       )}>
                         <item.icon className="w-6 h-6 text-primary" />
                       </div>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 font-heading uppercase tracking-wide">
+                  <h3 className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-2 font-heading uppercase tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-semibold">
+                  <p className="text-xs md:text-sm text-zinc-200/90 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -226,7 +219,6 @@ const Layanan = () => {
           })}
         </motion.div>
       </div>
-
     </section>
   );
 };
