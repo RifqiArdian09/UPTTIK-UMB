@@ -17,6 +17,9 @@
         "faq": "FAQ",
         "contact": "Kontak",
         "close": "Tutup Menu",
+        "openMenu": "Buka Menu Navigasi",
+        "toggleTheme": "Ganti Tema",
+        "switchLanguage": "Ganti Bahasa",
         "mainMenu": "Menu Utama",
         "contactUs": "Hubungi Kami"
     },
@@ -35,27 +38,27 @@
             {
                 "title": "Infrastruktur & Jaringan",
                 "subtitle": "Jaringan Kuat, Hasil Maksimal",
-                "description": "Pengelolaan dan pengembangan infrastruktur jaringan kampus untuk memastikan konektivitas stabil, cepat, dan aman di seluruh lingkungan Universitas Muhammadiyah Bengkulu."
+                "description": "Pengelolaan dan optimasi jaringan kampus untuk konektivitas internet yang stabil, cepat, dan aman."
             },
             {
                 "title": "Servis & Maintenance Perangkat",
                 "subtitle": "Servis Profesional dan Terpercaya",
-                "description": "Penanganan perangkat keras (hardware) and perangkat lunak (software) dilakukan secara teliti dan profesional untuk menjaga performa optimal perangkat kerja civitas akademika."
+                "description": "Pemeliharaan dan perbaikan perangkat keras maupun perangkat lunak untuk menunjang aktivitas akademik."
             },
             {
                 "title": "Dukungan Teknis & IT Support",
                 "subtitle": "Siap Siaga Menghadapi Tantangan Teknologi",
-                "description": "Tim UPTTIK UMB selalu siap memberikan dukungan teknis, troubleshooting, serta solusi atas berbagai kendala teknologi informasi secara cepat dan tepat."
+                "description": "Layanan bantuan teknis dan penanganan kendala sistem IT secara responsif bagi seluruh civitas akademika."
             },
             {
                 "title": "Konfigurasi Server & Data Center",
                 "subtitle": "Pengelolaan Server dan Network Device",
-                "description": "Instalasi, konfigurasi, dan monitoring server maupun perangkat jaringan di data center/rack guna menjamin keamanan dan stabilitas sistem informasi kampus."
+                "description": "Pengaturan, pemantauan, dan pengamanan server serta pusat data untuk menjamin kelancaran sistem kampus."
             },
             {
                 "title": "Pengembangan Website & Sistem Informasi",
                 "subtitle": "Solusi Digital untuk Institusi dan Unit Kerja",
-                "description": "Pengembangan website resmi, sistem informasi akademik, serta aplikasi berbasis web sesuai kebutuhan fakultas, program studi, dan unit kerja di lingkungan UMB."
+                "description": "Pembuatan dan integrasi aplikasi web serta portal sistem informasi akademik sesuai kebutuhan unit kerja UMB."
             }
         ]
     },

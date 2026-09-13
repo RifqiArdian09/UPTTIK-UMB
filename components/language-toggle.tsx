@@ -13,8 +13,14 @@ const LanguageToggle = () => {
         setMounted(true);
     }, []);
 
+    const label = language === "id" ? "Ganti ke Bahasa Inggris" : "Switch to Indonesian";
+
     if (!mounted) {
-        return <Button variant="outline" size="icon" />;
+        return (
+            <Button variant="outline" size="icon" aria-label="Ganti Bahasa">
+                <span className="sr-only">Ganti Bahasa</span>
+            </Button>
+        );
     }
 
     const toggleLanguage = () => {
@@ -26,10 +32,12 @@ const LanguageToggle = () => {
             variant="outline"
             size="sm"
             onClick={toggleLanguage}
-            className="flex items-center gap-2 px-3 font-medium transition-all"
+            aria-label={label}
+            className="flex items-center gap-2 px-3 font-medium transition-colors"
         >
             <Languages className="h-4 w-4" />
             <span className="text-xs uppercase">{language}</span>
+            <span className="sr-only">{label}</span>
         </Button>
     );
 };

@@ -125,7 +125,7 @@ const Footer = () => {
 
           {footerLinks.map((section) => (
             <div key={section.title} className="col-span-1">
-              <h4 className="text-foreground font-semibold mb-6 uppercase tracking-widest text-xs font-heading">{section.title}</h4>
+              <h3 className="text-foreground font-semibold mb-6 uppercase tracking-widest text-xs font-heading">{section.title}</h3>
               <ul className="space-y-3 text-muted-foreground text-sm">
                 {section.links.map((link) => (
                   <li key={link.name}>
@@ -145,7 +145,7 @@ const Footer = () => {
           ))}
 
           <div className="col-span-2 lg:col-span-1">
-            <h4 className="text-foreground font-semibold mb-6 uppercase tracking-widest text-xs font-heading">{t("footer.sections.contact")}</h4>
+            <h3 className="text-foreground font-semibold mb-6 uppercase tracking-widest text-xs font-heading">{t("footer.sections.contact")}</h3>
             <div className="space-y-4 text-sm text-muted-foreground">
               <div className="flex gap-4">
                 <MapPin className="text-primary w-5 h-5 flex-shrink-0" />

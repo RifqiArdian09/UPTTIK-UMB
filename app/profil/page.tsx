@@ -34,7 +34,8 @@ const ProfilePage = () => {
                             fill
                             className="object-cover"
                             priority
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
+                            quality={80}
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
                         <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-background to-transparent" />
@@ -89,6 +90,8 @@ const ProfilePage = () => {
                                             alt="Tentang UPTTIK"
                                             width={800}
                                             height={450}
+                                            quality={80}
+                                            sizes="(max-width: 640px) 100vw, 400px"
                                             className="w-full h-full object-cover aspect-video"
                                         />
                                     </div>
@@ -110,19 +113,21 @@ const ProfilePage = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="relative group hidden lg:block"
+                                className="relative group hidden lg:block max-w-md lg:max-w-lg mx-auto w-full"
                             >
-                                <div className="relative z-10 rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl">
+                                <div className="relative z-10 rounded-tr-[3.5rem] rounded-bl-[3.5rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl">
                                     <Image
                                         src="/team.webp"
                                         alt="Tentang UPTTIK"
-                                        width={800}
-                                        height={450}
-                                        className="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-105"
+                                        width={700}
+                                        height={400}
+                                        quality={80}
+                                        sizes="(max-width: 1024px) 100vw, 550px"
+                                        className="w-full h-auto max-h-[340px] object-cover aspect-video transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
-                                <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/5 rounded-full border border-primary/20 animate-pulse z-0 pointer-events-none" />
-                                <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl z-0 pointer-events-none" />
+                                <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/5 rounded-full border border-primary/20 animate-pulse z-0 pointer-events-none" />
+                                <div className="absolute -bottom-8 -right-8 w-60 h-60 bg-primary/5 rounded-full blur-3xl z-0 pointer-events-none" />
                             </motion.div>
                         </div>
                     </div>
@@ -158,7 +163,7 @@ const ProfilePage = () => {
                     <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                         {/* Header Part */}
                         <div className="text-center mb-20 md:mb-28">
-                            <motion.h1
+                            <motion.h2
                                 key={`vision-title-${language}`}
                                 initial={{ opacity: 0, y: -20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +172,7 @@ const ProfilePage = () => {
                                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight font-heading"
                             >
                                 {t("profile.vision.title")}
-                            </motion.h1>
+                            </motion.h2>
                         </div>
 
                         {/* Visi Part */}
@@ -177,7 +182,7 @@ const ProfilePage = () => {
                                     <Target className="text-primary h-10 w-10" />
                                 </div>
                             </div>
-                            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-6 font-heading">{t("profile.vision.label")}</h2>
+                            <h3 className="text-primary font-bold tracking-widest uppercase text-sm mb-6 font-heading">{t("profile.vision.label")}</h3>
                             <motion.blockquote
                                 key={`vision-content-${language}`}
                                 initial={{ opacity: 0, y: 10 }}
@@ -208,10 +213,11 @@ const ProfilePage = () => {
                                     <Compass className="text-primary h-10 w-10" />
                                 </div>
                             </div>
-                            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground font-heading">{t("profile.mission.title")}</h3>
+                            <h3 className="text-primary font-bold tracking-widest uppercase text-sm mb-6 font-heading">{t("profile.mission.label")}</h3>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground font-heading">{t("profile.mission.title")}</h2>
                         </motion.div>
 
-                        <div className="space-y-24 md:space-y-32">
+                        <div className="space-y-20 md:space-y-28">
                             {(t("profile.mission.items") as any[]).map((item, idx) => (
                                 <motion.div
                                     key={`${language}-${idx}`}
@@ -220,35 +226,37 @@ const ProfilePage = () => {
                                     viewport={{ once: true, margin: "-50px" }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                     className={cn(
-                                        "flex flex-col items-center gap-10 lg:gap-20",
+                                        "flex flex-col items-center gap-8 lg:gap-16",
                                         idx % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
                                     )}
                                 >
-                                    <div className="w-full md:w-1/2 relative group">
+                                    <div className="w-full md:w-1/2 relative group max-w-md lg:max-w-lg mx-auto">
                                         <div className={cn(
-                                            "absolute -inset-4 bg-primary/5 rounded-tl-xl rounded-br-xl",
-                                            idx % 2 === 0 ? "rounded-tr-[3rem] rounded-bl-[3rem]" : "rounded-tl-[3rem] rounded-br-[3rem]"
+                                            "absolute -inset-3 bg-primary/5 rounded-tl-xl rounded-br-xl",
+                                            idx % 2 === 0 ? "rounded-tr-[2.5rem] rounded-bl-[2.5rem]" : "rounded-tl-[2.5rem] rounded-br-[2.5rem]"
                                         )}></div>
-                                        <div className="relative overflow-hidden rounded-2xl">
+                                        <div className="relative overflow-hidden rounded-xl">
                                             <Image
                                                 alt={item.title}
                                                 className={cn(
-                                                    "relative shadow-2xl w-full aspect-video md:h-[400px] object-cover border-2 border-primary/10 transition-transform duration-700 ease-out group-hover:scale-105",
-                                                    idx % 2 === 0 ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl" : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"
+                                                    "relative shadow-2xl w-full aspect-video max-h-[260px] md:h-[260px] object-cover border-2 border-primary/10 transition-transform duration-700 ease-out group-hover:scale-105",
+                                                    idx % 2 === 0 ? "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-xl rounded-br-xl" : "rounded-tl-[2.5rem] rounded-br-[2.5rem] rounded-tr-xl rounded-bl-xl"
                                                 )}
                                                 src={missionImages[idx]}
-                                                width={800}
-                                                height={400}
+                                                width={700}
+                                                height={380}
+                                                quality={80}
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
                                             />
                                         </div>
                                     </div>
                                     <div className={cn("w-full md:w-1/2", idx % 2 === 1 && "md:text-left")}>
-                                        <span className="text-primary font-bold text-4xl opacity-20 block mb-3 font-heading">0{idx + 1}</span>
-                                        <h4 className="text-2xl sm:text-3xl font-extrabold text-foreground mb-5 font-heading">{item.title}</h4>
-                                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-normal">
+                                        <span className="text-primary font-bold text-3xl opacity-20 block mb-2 font-heading">0{idx + 1}</span>
+                                        <h3 className="text-xl sm:text-2xl font-extrabold text-foreground mb-4 font-heading">{item.title}</h3>
+                                        <p className="text-base text-muted-foreground leading-relaxed font-normal">
                                             {item.description}
                                         </p>
-                                        <div className={cn("mt-6 flex items-center gap-3 text-primary font-bold", idx % 2 === 1 && "justify-start")}>
+                                        <div className={cn("mt-5 flex items-center gap-3 text-primary font-bold", idx % 2 === 1 && "justify-start")}>
                                             <span className="w-8 h-px bg-primary"></span>
                                             <span className="text-xs uppercase tracking-widest font-heading">{item.badge}</span>
                                         </div>
@@ -408,12 +416,12 @@ const OrgCard = ({ name, role, isStaff }: { name: string, role: string, isStaff?
         <div className="absolute top-0 left-0 w-full h-1 bg-primary/30"></div>
         <div className="flex items-center gap-2">
             <div className="text-center flex-1 min-w-0">
-                <h4 className={cn(
+                <h3 className={cn(
                     "font-bold text-foreground leading-snug mb-0.5 md:mb-1 font-heading",
                     isStaff ? "text-[9px] sm:text-xs md:text-sm" : "text-[11px] sm:text-sm md:text-base lg:text-lg font-extrabold"
                 )}>
                     {name}
-                </h4>
+                </h3>
                 <p className={cn(
                     "text-muted-foreground font-medium",
                     isStaff ? "text-[7px] sm:text-[10px] md:text-xs" : "text-[9px] sm:text-xs md:text-sm text-primary/80 font-semibold"

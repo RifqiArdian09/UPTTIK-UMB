@@ -24,7 +24,6 @@ export const NavMenu = (props: NavigationMenuProps) => {
     { id: "beranda", name: t("navbar.home"), icon: Home, href: "/#beranda" },
     { id: "tentang", name: t("navbar.about"), icon: Info, href: "/#tentang" },
     { id: "layanan", name: t("navbar.services"), icon: Cpu, href: "/#layanan" },
-
     { id: "faq", name: t("navbar.faq"), icon: HelpCircle, href: "/#faq" },
     { id: "footer", name: t("navbar.contact"), icon: Send, href: "/#footer" },
   ];
@@ -62,7 +61,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.href)}
                   className={cn(
-                    "relative flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest transition-all duration-300 font-heading pb-1",
+                    "relative flex items-center gap-2 text-[13px] font-bold uppercase tracking-widest transition-colors duration-300 font-heading pb-1",
                     isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
                   )}
                 >

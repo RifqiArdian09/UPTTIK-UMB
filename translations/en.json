@@ -17,6 +17,9 @@
         "faq": "FAQ",
         "contact": "Contact",
         "close": "Close Menu",
+        "openMenu": "Open Navigation Menu",
+        "toggleTheme": "Toggle Theme",
+        "switchLanguage": "Switch Language",
         "mainMenu": "Main Menu",
         "contactUs": "Contact Us"
     },
@@ -35,27 +38,27 @@
             {
                 "title": "Infrastructure & Networking",
                 "subtitle": "Strong Network, Maximum Results",
-                "description": "Management and development of campus network infrastructure to ensure stable, fast, and secure connectivity throughout the University of Muhammadiyah Bengkulu."
+                "description": "Management and optimization of campus network infrastructure for fast, stable, and secure connectivity."
             },
             {
                 "title": "Device Service & Maintenance",
                 "subtitle": "Professional and Trusted Service",
-                "description": "Handling of hardware and software is done carefully and professionally to maintain optimal performance of the academic community's work devices."
+                "description": "Maintenance and repair of hardware and software to support daily academic activities."
             },
             {
                 "title": "Technical Support & IT Support",
                 "subtitle": "Ready to Face Technology Challenges",
-                "description": "The UPTTIK UMB team is always ready to provide technical support, troubleshooting, and solutions for various information technology constraints quickly and accurately."
+                "description": "Responsive technical support and troubleshooting for all university members."
             },
             {
                 "title": "Server Configuration & Data Center",
                 "subtitle": "Server and Network Device Management",
-                "description": "Installation, configuration, and monitoring of servers and network devices in data centers/racks to ensure the security and stability of campus information systems."
+                "description": "Setup, monitoring, and security management of server infrastructure and data center facilities."
             },
             {
                 "title": "Website Development & Information Systems",
                 "subtitle": "Digital Solutions for Institutions and Work Units",
-                "description": "Development of official websites, academic information systems, and web-based applications according to the needs of faculties, study programs, and work units within UMB."
+                "description": "Development and integration of web applications and academic portals for university faculties and units."
             }
         ]
     },

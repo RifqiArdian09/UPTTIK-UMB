@@ -23,24 +23,26 @@ const Tentangkami = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative"
+            className="relative max-w-md lg:max-w-lg mx-auto w-full"
           >
-            <div className="relative z-10 rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl group">
+            <div className="relative z-10 rounded-tr-[3.5rem] rounded-bl-[3.5rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl group">
               <Image
                 src="/tentanghome.webp"
                 alt="Tentang Kami UPTTIK"
-                width={800}
-                height={800}
-                className="w-full h-auto object-cover aspect-[4/5] lg:aspect-square transition-transform duration-700 group-hover:scale-105"
+                width={700}
+                height={500}
+                quality={80}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 550px"
+                className="w-full h-auto max-h-[360px] lg:max-h-[400px] object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* Technical Corner Accents */}
-              <div className="absolute top-6 right-6 w-12 h-12 border-t-2 border-r-2 border-white/30 rounded-tr-3xl pointer-events-none z-20"></div>
-              <div className="absolute bottom-6 left-6 w-12 h-12 border-b-2 border-l-2 border-white/30 rounded-bl-3xl pointer-events-none z-20"></div>
+              <div className="absolute top-5 right-5 w-10 h-10 border-t-2 border-r-2 border-white/30 rounded-tr-2xl pointer-events-none z-20"></div>
+              <div className="absolute bottom-5 left-5 w-10 h-10 border-b-2 border-l-2 border-white/30 rounded-bl-2xl pointer-events-none z-20"></div>
             </div>
 
             {/* Subtle background glow element */}
-            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
           </motion.div>
 
           {/* Right Side: Content */}
@@ -78,7 +80,7 @@ const Tentangkami = () => {
               <Button asChild size="xl" className="rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-lg rounded-br-lg group shadow-lg shadow-primary/20 px-8 sm:px-10 transition-all duration-300 hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98] font-semibold text-base">
                 <Link href="/profil" className="flex items-center">
                   {t("about.readMore")}
-                  <ChevronRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </motion.div>

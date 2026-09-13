@@ -117,7 +117,7 @@ const Layanan = () => {
                 key={idx}
                 variants={itemVariants}
                 className={cn(
-                  "group relative aspect-[4/5] sm:aspect-video lg:aspect-square xl:aspect-[3/4] overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
+                  "group relative aspect-[4/5] sm:aspect-[3/4] w-full overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
                   isEven
                     ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
                     : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"
@@ -128,7 +128,12 @@ const Layanan = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    quality={80}
+                    className={cn(
+                      "object-cover transition-transform duration-700 ease-out group-hover:scale-105",
+                      idx === 2 ? "object-top" : "object-center"
+                    )}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 420px"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
@@ -141,17 +146,17 @@ const Layanan = () => {
                   {item.icon && (
                     <div className="mb-4">
                       <div className={cn(
-                        "w-12 h-12 flex items-center justify-center bg-background/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl transition-transform duration-300 group-hover:scale-110",
-                        isEven ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"
+                        "w-11 h-11 md:w-12 md:h-12 flex items-center justify-center bg-background/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl transition-transform duration-300 group-hover:scale-110",
+                        isEven ? "rounded-tr-xl rounded-bl-xl" : "rounded-tl-xl rounded-br-xl"
                       )}>
-                        <item.icon className="w-6 h-6 text-primary" />
+                        <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                       </div>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-2 font-heading uppercase tracking-wide">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-extrabold text-white leading-tight mb-2 font-heading uppercase tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-zinc-200/90 leading-relaxed font-normal">
+                  <p className="text-xs md:text-sm text-zinc-200/95 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -160,14 +165,14 @@ const Layanan = () => {
           })}
         </motion.div>
 
-        {/* Second Row - 2 Cards Centered */}
+        {/* Second Row - 2 Cards Centered (Landscape) */}
         <motion.div
           key={`grid2-${language}`}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto w-full"
         >
           {translatedLayanan.slice(3).map((item, idx) => {
             const isEven = (idx + 1) % 2 === 0;
@@ -176,7 +181,7 @@ const Layanan = () => {
                 key={idx + 3}
                 variants={itemVariants}
                 className={cn(
-                  "group relative aspect-[4/5] sm:aspect-video xl:aspect-video overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
+                  "group relative aspect-[4/3] sm:aspect-video xl:aspect-video w-full overflow-hidden bg-card border border-primary/10 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-2xl cursor-pointer",
                   isEven
                     ? "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl"
                     : "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl"
@@ -187,7 +192,9 @@ const Layanan = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    quality={80}
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 object-center"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 550px"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
@@ -200,17 +207,17 @@ const Layanan = () => {
                   {item.icon && (
                     <div className="mb-4">
                       <div className={cn(
-                        "w-12 h-12 flex items-center justify-center bg-background/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl transition-transform duration-300 group-hover:scale-110",
-                        isEven ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"
+                        "w-11 h-11 md:w-12 md:h-12 flex items-center justify-center bg-background/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl transition-transform duration-300 group-hover:scale-110",
+                        isEven ? "rounded-tr-xl rounded-bl-xl" : "rounded-tl-xl rounded-br-xl"
                       )}>
-                        <item.icon className="w-6 h-6 text-primary" />
+                        <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                       </div>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-2 font-heading uppercase tracking-wide">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-extrabold text-white leading-tight mb-2 font-heading uppercase tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-zinc-200/90 leading-relaxed font-normal">
+                  <p className="text-xs md:text-sm text-zinc-200/95 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>

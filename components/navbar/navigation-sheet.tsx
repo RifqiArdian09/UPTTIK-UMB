@@ -45,8 +45,14 @@ export const NavigationSheet = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="group rounded-xl border-primary/20 hover:border-primary/50 transition-colors bg-background/50 backdrop-blur-sm">
+        <Button
+          variant="outline"
+          size="icon"
+          aria-label={t("navbar.openMenu") || "Buka Menu Navigasi"}
+          className="group rounded-xl border-primary/20 hover:border-primary/50 transition-colors bg-background/50 backdrop-blur-sm"
+        >
           <Menu className="h-5 w-5 transition-transform group-hover:scale-110" />
+          <span className="sr-only">{t("navbar.openMenu") || "Buka Menu Navigasi"}</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="p-0 w-full sm:w-[400px] border-l border-primary/10 overflow-hidden bg-background">

@@ -23,7 +23,8 @@ const Hero = () => {
           fill
           className="object-cover object-top md:object-center"
           priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
+          quality={80}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
         <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-background to-transparent" />
@@ -61,20 +62,19 @@ const Hero = () => {
               className="w-full sm:w-auto rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-lg rounded-br-lg text-base font-bold group shadow-xl shadow-black/25 transition-all duration-300 hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98]"
               asChild
             >
-              <Link href="#tentang">
+              <Link href="#tentang" className="flex items-center justify-center gap-2">
                 {t("hero.getStarted")}
-                <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
             </Button>
             <Button
               size="xl"
-              variant="outline"
-              className="w-full sm:w-auto rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-lg rounded-br-lg text-base font-bold group transition-all duration-300 hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98] text-foreground bg-background/90 backdrop-blur-sm border-white/20 hover:bg-background"
+              className="w-full sm:w-auto rounded-tr-[2rem] rounded-bl-[2rem] rounded-tl-lg rounded-br-lg text-base font-bold group transition-all duration-300 hover:rounded-2xl hover:scale-[1.02] active:scale-[0.98] bg-transparent border-2 border-white/30 text-white hover:bg-white/10"
               asChild
             >
-              <Link href="#footer">
+              <Link href="#footer" className="flex items-center justify-center gap-2">
                 {t("hero.contactUs")}
-                <Phone className="ml-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                <Phone className="h-5 w-5 transition-transform group-hover:scale-110" />
               </Link>
             </Button>
           </motion.div>
