@@ -3,7 +3,7 @@ import Hero from "@/components/hero";
 import Tentangkami from "@/components/tentangkami";
 import Layanan from "@/components/layanan";
 import { Navbar } from "@/components/navbar";
-import Testimonials from "@/components/testimonials";
+
 import FAQ from "@/components/faq";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         <Tentangkami />
         <Layanan />
-        <Testimonials />
+
         <FAQ />
         <Footer />
       </main>

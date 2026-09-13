@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Phone } from "lucide-react";
 import React from "react";
@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/team.jpeg"
+          src="/team.webp"
           alt="UMB Background"
           fill
           className="object-cover object-top md:object-center"
@@ -31,21 +31,12 @@ const Hero = () => {
 
       <div className="relative z-10 md:mt-6 flex items-center justify-center">
         <div className="text-center max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Badge variant="outline" className="rounded-full px-4 py-1.5 border-white/20 bg-white/10 text-white backdrop-blur-sm">
-              {t("hero.badge1")} • {t("hero.badge2")} • {t("hero.badge3")}
-            </Badge>
-          </motion.div>
 
           <motion.h1
             initial={{ y: -10, opacity: 1 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-8 text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-white drop-shadow-lg font-heading"
+            className="mt-8 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.1] tracking-tight text-white drop-shadow-lg font-heading"
           >
             {t("hero.title1")} <br />
            {t("hero.title2")}
@@ -55,7 +46,7 @@ const Hero = () => {
             initial={{ y: -10, opacity: 1 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-8 max-w-[65ch] mx-auto text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-md"
+            className="mt-8 max-w-[65ch] mx-auto text-base md:text-lg text-white/90 leading-relaxed drop-shadow-md"
           >
             {t("hero.description")}
           </motion.p>

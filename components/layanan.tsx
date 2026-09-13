@@ -42,7 +42,7 @@ const Layanan = () => {
   const { t, language } = useLanguage();
 
   const icons = [Cable, HardDrive, Headset, Server, Globe];
-  const images = ["/layanan1.jpeg", "/layanan2.png", "/layanan3.jpeg", "/layanan4.jpeg", "/layanan5.png"];
+  const images = ["/layanan1.webp", "/layanan2.webp", "/layanan3.webp", "/layanan4.webp", "/layanan5.webp"];
 
   const translatedLayanan = (t("layanan.items") as any[]).map((item, idx) => ({
     ...item,
@@ -53,7 +53,7 @@ const Layanan = () => {
   return (
     <section
       id="layanan"
-      className="relative flex flex-col items-center justify-center py-24 xs:py-32 px-6 overflow-hidden bg-muted/50"
+      className="relative flex flex-col items-center justify-center py-24 xs:py-32 px-6 md:px-12 lg:px-16 overflow-hidden bg-muted/50"
     >
       {/* Technical Frame Decorations - Visible on all devices */}
       <div className="absolute inset-0 pointer-events-none">
@@ -83,22 +83,12 @@ const Layanan = () => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-20">
-          <motion.div
-            key={`badge-${language}`}
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary"
-          >
-            <Cpu className="h-4 w-4" />
-            {t("layanan.badge")}
-          </motion.div>
           <motion.h2
             key={`title-${language}`}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-center tracking-tight font-heading flex items-center gap-3"
+            className="text-3xl md:text-4xl lg:text-5xl font-black text-center tracking-tight font-heading flex items-center gap-3"
           >
             <Sparkles className="h-8 w-8 text-primary hidden md:block" />
             {t("layanan.title")}

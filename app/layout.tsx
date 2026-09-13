@@ -2,16 +2,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { GeistSans } from "geist/font/sans";
-import { Anonymous_Pro } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { LanguageProvider } from "@/context/language-context";
 import "./globals.css";
 
-const geist = GeistSans;
-
-const anonymousPro = Anonymous_Pro({
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  weight: ["400", "700"],
   variable: "--font-sans",
 });
 
@@ -32,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${geist.variable} ${anonymousPro.variable} ${anonymousPro.className} antialiased bg-background text-foreground grid-bg`} suppressHydrationWarning={true}>
+      <body className={`${poppins.variable} ${poppins.className} antialiased bg-background text-foreground grid-bg`} suppressHydrationWarning={true}>
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <TooltipProvider>

@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
-import { Home, Info, Cpu, MessageSquareQuote, Send, HelpCircle } from "lucide-react";
+import { Home, Info, Cpu, Send, HelpCircle } from "lucide-react";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
@@ -24,7 +24,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
     { id: "beranda", name: t("navbar.home"), icon: Home, href: "/#beranda" },
     { id: "tentang", name: t("navbar.about"), icon: Info, href: "/#tentang" },
     { id: "layanan", name: t("navbar.services"), icon: Cpu, href: "/#layanan" },
-    { id: "testimonials", name: t("navbar.testimonials"), icon: MessageSquareQuote, href: "/#testimonials" },
+
     { id: "faq", name: t("navbar.faq"), icon: HelpCircle, href: "/#faq" },
     { id: "footer", name: t("navbar.contact"), icon: Send, href: "/#footer" },
   ];

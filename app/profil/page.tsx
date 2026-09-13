@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion } from "motion/react";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
-import { Badge } from "@/components/ui/badge";
+
 import { Target, Landmark, Compass, Users2, Building2 } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -19,17 +19,17 @@ const ProfilePage = () => {
         window.scrollTo({ top: 0, behavior: 'instant' });
     }, []);
 
-    const missionImages = ["/tentanghome.jpeg", "/misi2.jpeg", "/misi3.png"];
+    const missionImages = ["/tentanghome.webp", "/misi2.webp", "/misi3.webp"];
 
     return (
-        <div className="min-h-screen bg-background text-foreground grid-bg">
+        <div className="min-h-screen bg-background text-foreground grid-bg overflow-x-hidden">
             <Navbar />
             <main id="tentang" className="pt-16 pb-20">
                 {/* Hero Section */}
                 <section className="relative w-full h-[350px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <Image
-                            src="/visi.png"
+                            src="/visi.webp"
                             alt="UMB Background"
                             fill
                             className="object-cover"
@@ -40,21 +40,17 @@ const ProfilePage = () => {
                         <div className="absolute bottom-0 left-0 right-0 h-12 md:h-16 bg-gradient-to-t from-background to-transparent" />
                     </div>
 
-                    <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
+                    <div className="relative z-10 max-w-7xl mx-auto text-center px-6 md:px-12 lg:px-16">
                         <motion.div
                             key={`hero-${language}`}
                             initial={{ y: -10, opacity: 1 }}
                             animate={{ y: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <Badge variant="outline" className="rounded-full px-4 py-1.5 md:px-6 md:py-2 border-white/20 bg-white/10 text-white mb-4 md:mb-6 backdrop-blur-sm gap-2 text-[10px] md:text-xs">
-                                <Building2 className="h-3 w-3 md:h-4 md:w-4" />
-                                {t("profile.hero.badge")}
-                            </Badge>
-                            <h1 className="text-3xl md:text-6xl font-black tracking-tight mb-3 md:mb-8 text-white drop-shadow-md leading-tight">
+                            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-3 md:mb-8 text-white drop-shadow-md leading-tight">
                                 {t("profile.hero.title1")} <span className="text-white">{t("profile.hero.title2")}</span>
                             </h1>
-                            <p className="max-w-2xl mx-auto text-sm md:text-xl text-white/90 leading-relaxed font-medium drop-shadow-sm">
+                            <p className="max-w-2xl mx-auto text-sm md:text-lg text-white/90 leading-relaxed font-medium drop-shadow-sm">
                                 {t("profile.hero.description")}
                             </p>
                         </motion.div>
@@ -62,7 +58,7 @@ const ProfilePage = () => {
                 </section>
 
                 {/* Tentang Kami Section */}
-                <section id="about" className="py-24 px-6 bg-background">
+                <section id="about" className="py-24 px-6 md:px-12 lg:px-16 bg-background">
                     <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <motion.div
@@ -81,14 +77,14 @@ const ProfilePage = () => {
                                 </div>
 
                                 <div className="text-center lg:text-left">
-                                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-foreground font-heading uppercase">{t("profile.about.title")}</h2>
+                                    <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground font-heading uppercase">{t("profile.about.title")}</h2>
                                 </div>
 
                                 {/* Mobile Image */}
                                 <div className="lg:hidden relative group">
                                     <div className="relative z-10 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl">
                                         <Image
-                                            src="/team.jpeg"
+                                            src="/team.webp"
                                             alt="Tentang UPTTIK"
                                             width={800}
                                             height={450}
@@ -116,7 +112,7 @@ const ProfilePage = () => {
                             >
                                 <div className="relative z-10 rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl">
                                     <Image
-                                        src="/team.jpeg"
+                                        src="/team.webp"
                                         alt="Tentang UPTTIK"
                                         width={800}
                                         height={450}
@@ -162,18 +158,9 @@ const ProfilePage = () => {
                         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
                     </div>
 
-                    <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                         {/* Header Part */}
                         <div className="text-center mb-32">
-                            <motion.span
-                                key={`vision-subtitle-${language}`}
-                                initial={{ opacity: 0, y: -10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-6 block"
-                            >
-                                {t("profile.vision.subtitle")}
-                            </motion.span>
                             <motion.h1
                                 key={`vision-title-${language}`}
                                 initial="hidden"
@@ -189,7 +176,7 @@ const ProfilePage = () => {
                                         }
                                     }
                                 }}
-                                className="text-4xl md:text-6xl font-black text-foreground leading-[1.1] tracking-tight"
+                                className="text-3xl md:text-5xl font-extrabold text-foreground leading-[1.1] tracking-tight"
                             >
                                 {t("profile.vision.title").split(" ").map((word: string, i: number) => (
                                     <span key={i} className="inline-block whitespace-nowrap">
@@ -197,8 +184,8 @@ const ProfilePage = () => {
                                             <motion.span
                                                 key={j}
                                                 variants={{
-                                                    hidden: { opacity: 0, y: -20, filter: "blur(10px)" },
-                                                    visible: { opacity: 1, y: 0, filter: "blur(0px)" }
+                                                    hidden: { opacity: 0, y: -20 },
+                                                    visible: { opacity: 1, y: 0 }
                                                 }}
                                                 transition={{ duration: 0.5, ease: "easeOut" }}
                                                 className="inline-block"
@@ -234,7 +221,7 @@ const ProfilePage = () => {
                                         },
                                     },
                                 }}
-                                className="text-3xl md:text-4xl font-medium text-foreground leading-snug"
+                                className="text-2xl md:text-3xl font-medium text-foreground leading-snug"
                             >
                                 &quot;{t("profile.vision.content").split("").map((char: string, index: number) => (
                                     <motion.span
@@ -254,7 +241,7 @@ const ProfilePage = () => {
 
                 {/* Misi Section */}
                 <section id="misi" className="py-32 overflow-visible bg-background relative">
-                    <div className="max-w-7xl mx-auto px-8">
+                    <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
                         <motion.div
                             key={`mission-header-${language}`}
                             initial={{ opacity: 0, y: -20 }}
@@ -267,16 +254,15 @@ const ProfilePage = () => {
                                     <Compass className="text-primary h-10 w-10" />
                                 </div>
                             </div>
-                            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4 font-heading">{t("profile.mission.label")}</h2>
-                            <h3 className="text-3xl md:text-4xl font-extrabold text-foreground font-heading">{t("profile.mission.title")}</h3>
+                            <h3 className="text-2xl md:text-3xl font-extrabold text-foreground font-heading">{t("profile.mission.title")}</h3>
                         </motion.div>
 
                         <div className="space-y-32">
                             {(t("profile.mission.items") as any[]).map((item, idx) => (
                                 <motion.div
                                     key={`${language}-${idx}`}
-                                    initial={{ opacity: 0, y: -30, filter: "blur(5px)" }}
-                                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-50px" }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                     className={cn(
@@ -306,7 +292,7 @@ const ProfilePage = () => {
                                         </motion.div>
                                     </div>
                                     <div className={cn("w-full md:w-1/2", idx % 2 === 1 && "md:text-left")}>
-                                        <span className="text-primary font-black text-6xl opacity-20 block mb-4">0{idx + 1}</span>
+                                        <span className="text-primary font-bold text-4xl opacity-20 block mb-4">0{idx + 1}</span>
                                         <h4 className="text-2xl font-bold text-foreground mb-6 font-heading">{item.title}</h4>
                                         <p className="text-lg text-muted-foreground leading-relaxed">
                                             {item.description}
@@ -323,7 +309,7 @@ const ProfilePage = () => {
                 </section>
 
                 {/* Struktur Organisasi Section */}
-                <section id="struktur-organisasi" className="py-20 px-4 relative overflow-hidden">
+                <section id="struktur-organisasi" className="py-20 px-6 md:px-12 lg:px-16 relative overflow-hidden">
                     {/* Technical Frame Decorations - Visible on all devices */}
                     <div className="absolute inset-0 pointer-events-none">
                         {/* Top Divider */}
@@ -355,7 +341,7 @@ const ProfilePage = () => {
                                     <Users2 className="text-primary h-10 w-10" />
                                 </div>
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase font-heading mb-4">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight uppercase font-heading mb-4">
                                 {t("profile.org.title")}
                             </h2>
                             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -385,7 +371,7 @@ const ProfilePage = () => {
                                 <path d="M 400 50 L 600 50 L 600 100" stroke="currentColor" strokeWidth="2" fill="none" vectorEffect="non-scaling-stroke" className="text-primary/30" />
                             </svg>
 
-                            <div className="relative w-full max-w-6xl px-2">
+                            <div className="relative w-full max-w-6xl px-4 md:px-0">
                                 <div className="grid grid-cols-2 gap-3 md:gap-32">
                                     {/* Bidang Software */}
                                     <motion.div

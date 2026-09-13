@@ -14,7 +14,6 @@
         "about": "Tentang Kami",
         "services": "Layanan",
         "profile": "Profil",
-        "testimonials": "Testimoni",
         "faq": "FAQ",
         "contact": "Kontak",
         "close": "Tutup Menu",
@@ -57,38 +56,6 @@
                 "title": "Pengembangan Website & Sistem Informasi",
                 "subtitle": "Solusi Digital untuk Institusi dan Unit Kerja",
                 "description": "Pengembangan website resmi, sistem informasi akademik, serta aplikasi berbasis web sesuai kebutuhan fakultas, program studi, dan unit kerja di lingkungan UMB."
-            }
-        ]
-    },
-    "testimonials": {
-        "title": "Apa Kata ",
-        "title_italic": "Mereka?",
-        "description": "Kepercayaan dan kepuasan Anda adalah prioritas utama kami. Berikut adalah pengalaman dari mereka yang telah menggunakan layanan kami.",
-        "list": [
-            {
-                "name": "Habib",
-                "designation": "Business Manager",
-                "testimonial": "Infrastruktur jaringan yang disediakan UPT TIK sangat stabil dan reliable. Kami tidak lagi khawatir tentang gangguan koneksi saat melakukan kegiatan penting. Keamanan data kami pun terjamin!"
-            },
-            {
-                "name": "Rifqi Ardian",
-                "designation": "Mahasiswa",
-                "testimonial": "UPT TIK selalu responsif terhadap kebutuhan kami, terutama dalam adaptasi teknologi baru. Tim dukungan teknisnya sangat cepat dan kompeten dalam menyelesaikan masalah. Pelayanan terbaik!"
-            },
-            {
-                "name": "Salman Abdul Aziz",
-                "designation": "Karyawan",
-                "testimonial": "Layanan Analisis Big Data UPT TIK telah membantu kami mendapatkan wawasan akurat untuk pengambilan keputusan strategis kampus. Kinerja sistem informasi akademik pun kini jauh lebih efisien."
-            },
-            {
-                "name": "Ariel",
-                "designation": "Mahasiswa",
-                "testimonial": "Komitmen UPT TIK terhadap keandalan dan inovasi teknologi benar-benar terbukti. Sistem yang mereka bangun sangat mendukung transformasi digital di lingkungan kampus kami."
-            },
-            {
-                "name": "Rafy",
-                "designation": "Mahasiswa",
-                "testimonial": "Komitmen UPT TIK terhadap keandalan dan inovasi teknologi benar-benar terbukti. Sistem yang mereka bangun sangat mendukung transformasi digital di lingkungan kampus kami."
             }
         ]
     },

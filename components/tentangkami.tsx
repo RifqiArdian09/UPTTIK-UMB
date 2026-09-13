@@ -13,7 +13,7 @@ const Tentangkami = () => {
   return (
     <section
       id="tentang"
-      className="relative py-24 xs:py-32 px-6 overflow-hidden bg-background"
+      className="relative py-24 xs:py-32 px-6 md:px-12 lg:px-16 overflow-hidden bg-background"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -27,7 +27,7 @@ const Tentangkami = () => {
           >
             <div className="relative z-10 rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-xl rounded-br-xl overflow-hidden border-2 border-primary/10 shadow-2xl group">
               <Image
-                src="/tentanghome.jpeg"
+                src="/tentanghome.webp"
                 alt="Tentang Kami UPTTIK"
                 width={800}
                 height={800}
@@ -49,10 +49,7 @@ const Tentangkami = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block font-heading">
-                {t("about.subtitle")}
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-8 ">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] mb-8 ">
                 {t("about.title1")} <span className="text-primary">&</span> {t("about.title2")}
               </h2>
             </motion.div>

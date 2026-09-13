@@ -14,7 +14,6 @@
         "about": "About Us",
         "services": "Services",
         "profile": "Profile",
-        "testimonials": "Testimonials",
         "faq": "FAQ",
         "contact": "Contact",
         "close": "Close Menu",
@@ -57,38 +56,6 @@
                 "title": "Website Development & Information Systems",
                 "subtitle": "Digital Solutions for Institutions and Work Units",
                 "description": "Development of official websites, academic information systems, and web-based applications according to the needs of faculties, study programs, and work units within UMB."
-            }
-        ]
-    },
-    "testimonials": {
-        "title": "What ",
-        "title_italic": "They Say?",
-        "description": "Your trust and satisfaction are our top priority. Here are the experiences of those who have used our services.",
-        "list": [
-            {
-                "name": "Habib",
-                "designation": "Business Manager",
-                "testimonial": "The network infrastructure provided by UPT TIK is very stable and reliable. We are no longer worried about connection disruptions during important activities. Our data security is also guaranteed!"
-            },
-            {
-                "name": "Rifqi Ardian",
-                "designation": "Student",
-                "testimonial": "UPT TIK is always responsive to our needs, especially in adapting new technologies. The technical support team is very fast and competent in solving problems. Best service!"
-            },
-            {
-                "name": "Salman Abdul Aziz",
-                "designation": "Employee",
-                "testimonial": "UPT TIK's Big Data Analysis service has helped us get accurate insights for campus strategic decision making. Academic information system performance is now much more efficient."
-            },
-            {
-                "name": "Ariel",
-                "designation": "Student",
-                "testimonial": "UPT TIK's commitment to technological reliability and innovation is truly proven. The systems they build strongly support digital transformation in our campus environment."
-            },
-            {
-                "name": "Rafy",
-                "designation": "Student",
-                "testimonial": "UPT TIK's commitment to technological reliability and innovation is truly proven. The systems they build strongly support digital transformation in our campus environment."
             }
         ]
     },

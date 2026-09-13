@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { LayoutDashboard, Menu, Info, Cpu, MessageSquareQuote, Send, Home, ChevronRight, Mail, Phone, MapPin, X, HelpCircle } from "lucide-react";
+import { LayoutDashboard, Menu, Info, Cpu, Send, Home, ChevronRight, Mail, Phone, MapPin, X, HelpCircle } from "lucide-react";
 import { Logo } from "./logo";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -23,7 +23,7 @@ export const NavigationSheet = () => {
     { id: "beranda", name: t("navbar.home"), icon: Home, href: "/#beranda" },
     { id: "tentang", name: t("navbar.about"), icon: Info, href: "/#tentang" },
     { id: "layanan", name: t("navbar.services"), icon: Cpu, href: "/#layanan" },
-    { id: "testimonials", name: t("navbar.testimonials"), icon: MessageSquareQuote, href: "/#testimonials" },
+
     { id: "faq", name: t("navbar.faq"), icon: HelpCircle, href: "/#faq" },
     { id: "footer", name: t("navbar.contact"), icon: Send, href: "/#footer" },
   ];
