@@ -34,6 +34,7 @@ const ProfilePage = () => {
                             fill
                             className="object-cover"
                             priority
+                            fetchPriority="high"
                             quality={80}
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
                         />

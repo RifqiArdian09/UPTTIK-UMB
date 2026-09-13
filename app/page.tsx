@@ -1,10 +1,11 @@
-import Footer from "@/components/footer";
-import Hero from "@/components/hero";
-import Tentangkami from "@/components/tentangkami";
-import Layanan from "@/components/layanan";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navbar";
+import Hero from "@/components/hero";
 
-import FAQ from "@/components/faq";
+const Tentangkami = dynamic(() => import("@/components/tentangkami"));
+const Layanan = dynamic(() => import("@/components/layanan"));
+const FAQ = dynamic(() => import("@/components/faq"));
+const Footer = dynamic(() => import("@/components/footer"));
 
 export default function Home() {
   return (
@@ -14,7 +15,6 @@ export default function Home() {
         <Hero />
         <Tentangkami />
         <Layanan />
-
         <FAQ />
         <Footer />
       </main>
